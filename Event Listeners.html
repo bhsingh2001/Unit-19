@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Event Listeners Example</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        /* Define some CSS for the interaction */
+        #myElement {
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+            color: white;
+            text-align: center;
+            line-height: 100px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="myElement">Hover or Click Me!</div>
+
+    <script>
+        // jQuery code to add event listeners
+        $(document).ready(function() {
+            // Click event listener
+            $('#myElement').click(function() {
+                $(this).text('Clicked!');
+                $(this).css('background-color', 'red');
+            });
+
+            // Hover event listener
+            $('#myElement').hover(
+                function() { // Mouse over
+                    $(this).text('Hovered!');
+                    $(this).css('background-color', 'green');
+                },
+                function() { // Mouse out
+                    $(this).text('Hover or Click Me!');
+                    $(this).css('background-color', 'blue');
+                }
+            );
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery UI Elements</title>
+    
+    <!-- Include jQuery from a CDN -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    
+    <!-- Include jQuery UI (optional) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    
+    <!-- Your CSS styles -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css">
+    
+    <style>
+        /* Your CSS styles here */
+    </style>
+</head>
+<body>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery UI Elements</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css">
+    <style>
+        /* Styles for the tabs and accordions */
+        .tabs { display: none; }
+        .accordion { display: none; }
+        /* Style for the fading element */
+        .fade-element { display: none; }
+        /* Style for the modal */
+        #myModal { display: none; }
+        /* Style for the moving element */
+        .move-element { position: relative; left: 0; }
+        /* Style for the background image animation */
+        #bg-animation { width: 100%; height: 300px; background-image: url('your-image.jpg'); background-position: center; background-size: cover; }
+        /* Style for smooth scrolling */
+        .scroll-to {
+            cursor: pointer;
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Tabs -->
+<div class="tabs">
+    <ul>
+        <li><a href="#tab1">Tab 1</a></li>
+        <li><a href="#tab2">Tab 2</a></li>
+        <li><a href="#tab3">Tab 3</a></li>
+    </ul>
+    <div id="tab1">Content for Tab 1</div>
+    <div id="tab2">Content for Tab 2</div>
+    <div id="tab3">Content for Tab 3</div>
+</div>
+
+<!-- Accordions -->
+<div class="accordion">
+    <h3>Section 1</h3>
+    <div>Content for Section 1</div>
+    <h3>Section 2</h3>
+    <div>Content for Section 2</div>
+    <h3>Section 3</h3>
+    <div>Content for Section 3</div>
+</div>
+
+<!-- Fading Element -->
+<div class="fade-element">
+    <p>This element will fade in when the page loads.</p>
+</div>
+
+<!-- Modal -->
+<div id="myModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <p>This is a modal dialog.</p>
+    </div>
+</div>
+
+<!-- Moving Element -->
+<div class="move-element">
+    <p>Move me!</p>
+</div>
+
+<!-- Background Image Animation -->
+<div id="bg-animation"></div>
+
+<!-- Smooth Scrolling -->
+<a href="#scroll-target" class="scroll-to">Scroll to Target</a>
+<div id="scroll-target" style="height: 1000px; background-color: #eee;"></div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<script>
+    $(document).ready(function() {
+        // Tabs
+        $(".tabs").tabs();
+
+        // Accordions
+        $(".accordion").accordion();
+
+        // Fading Element
+        $(".fade-element").fadeIn();
+
+        // Modal
+        $("#myModal").css("display", "block");
+
+        // Moving Element Animation
+        $(".move-element").animate({ left: "200px" }, 2000);
+
+        // Background Image Animation
+        function animateBackground() {
+            $("#bg-animation").animate({ backgroundPositionX: '100%' }, 5000);
+        }
+        animateBackground();
+
+        // Smooth Scrolling
+        $(".scroll-to").on("click", function() {
+            $("html, body").animate({ scrollTop: $("#scroll-target").offset().top }, 1000);
+        });
+    });
+</script>
+</body>
+</html>
